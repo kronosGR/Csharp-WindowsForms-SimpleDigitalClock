@@ -16,5 +16,18 @@ namespace SimpleDigitalClock
         {
             InitializeComponent();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hourMinuteLabel.Text = DateTime.Now.ToString("HH:mm");
+            secondsLabel.Text = DateTime.Now.ToString("ss");
+            dateLabel.Text = DateTime.Now.ToString("MMM:dd:yyyy");
+            weekDayLabel.Text = DateTime.Now.ToString("ddd");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }

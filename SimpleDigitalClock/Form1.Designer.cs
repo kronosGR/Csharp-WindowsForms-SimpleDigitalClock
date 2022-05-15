@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.hourMinuteLabel = new System.Windows.Forms.Label();
             this.secondsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.weekDayLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // hourMinuteLabel
@@ -74,6 +76,11 @@
             this.weekDayLabel.TabIndex = 3;
             this.weekDayLabel.Text = "Wed";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +93,7 @@
             this.Controls.Add(this.hourMinuteLabel);
             this.Name = "Form1";
             this.Text = "Simple Digital Clock";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -96,6 +104,7 @@
         private System.Windows.Forms.Label secondsLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label weekDayLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
